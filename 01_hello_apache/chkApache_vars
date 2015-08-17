@@ -1,0 +1,13 @@
+httpd -t -D DUMP_MODULES
+
+##check all modules are that are loaded!
+
+httpd -t -D DUMP_RUN_CFG
+
+##check all the run configs
+
+
+
+
+
+
