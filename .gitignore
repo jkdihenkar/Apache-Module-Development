@@ -3,4 +3,6 @@
 *.la
 *.lo
 *.slo
+*.a
+*.lai
 *.libs/*
