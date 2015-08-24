@@ -1,0 +1,24 @@
+APXS tool for compiling apache modules
+
+1. Just Compile (apxs -i -a -c ) and Hook the sample module to apache
+	--> httpd.conf 
+	+LoadModule example_module     /usr/lib64/httpd/modules/mod_example_1.so
+	+<Location /reqTest>
+	+        SetHandler example-handler-reqTest
+	+</Location>
+
+Given the path to run the handler "/reqTest" so hitting "localhost/reqTest" will run module page.
+
+2. Some key elements of the request_rec structure are:
+
+--- r->handler (char*): Contains the name of the handler the server is currently asking to do the handling of this request
+--- r->method (char*): Contains the HTTP method being used, f.x. GET or POST
+--- r->filename (char*): Contains the translated filename the client is requesting
+--- r->args (char*): Contains the query string of the request, if any
+--- r->headers_in (apr_table_t*): Contains all the headers sent by the client
+--- r->connection (conn_rec*): A record containing information about the current connection
+--- r->user (char*): If the URI requires authentication, this is set to the username provided
+--- r->useragent_ip (char*): The IP address of the client connecting to us
+r->pool (apr_pool_t*): The memory pool of this request. We'll discuss this in the "Memory management" chapter.
+
+3. Hit the url to check all this values!
