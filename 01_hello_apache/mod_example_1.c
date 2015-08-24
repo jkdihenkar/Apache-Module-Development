@@ -23,9 +23,9 @@ module AP_MODULE_DECLARE_DATA   example_module =
 
 
 /* register_hooks: Adds a hook to the httpd process */
-static void register_hooks(apr_pool_t *pool) 
+static void register_hooks(apr_pool_t *pool)
 {
-    
+
     /* Hook the request handler */
     ap_hook_handler(example_handler, NULL, NULL, APR_HOOK_LAST);
 }
@@ -41,7 +41,7 @@ static int example_handler(request_rec *r)
      * and Apache will try somewhere else.
      */
     if (!r->handler || strcmp(r->handler, "example-handler")) return (DECLINED);
-    
+
     // The first thing we will do is write a simple "Hello, world!" back to the client.
     ap_rputs("Hello, world!<br/>", r);
     return OK;
