@@ -64,14 +64,8 @@ static int example_handler(request_rec *r)
 	ap_rprintf(r,"The request headers_in params are as follows :  <br>");
 	printtable(r,r->headers_in,"Request Headers", "Header", "Value");
 	ap_rprintf(r,"The request User Agent is : %s <br>", r->useragent_ip);
-	
-    
+
+
     return OK;
 	}
 }
-
-
-
-
-
-

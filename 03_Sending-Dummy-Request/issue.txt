@@ -1,0 +1,3 @@
+The libapreq is not a stable lib and also missing tutorials and sample usage manual.
+
+--> Need external help with this to use it
