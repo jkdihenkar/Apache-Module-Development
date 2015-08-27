@@ -83,7 +83,7 @@ static int example_handler(request_rec *r)
     curl_easy_setopt(curl, CURLOPT_URL,"http://google.com/search");
     //curl_easy_setopt(curl, CURLOPT_POST,1L);
     curl_easy_setopt(curl, CURLOPT_POSTFIELDS,postData);
-    ap_rprintf(r,"%d",curl_easy_perform(curl));
+    ap_rprintf(r,"<br> Curl Response Code : %d",curl_easy_perform(curl));
     curl_easy_cleanup(curl);
   }
 

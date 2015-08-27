@@ -3,10 +3,12 @@ APXS tool for compiling apache modules
 1. Just Compile (apxs -i -a -c ) and Hook the sample module to apache
 	--> httpd.conf 
 	+LoadModule example_module     /usr/lib64/httpd/modules/mod_example_1.so
-	+<Location /jd>
+	+<Location /reqTest>
 	+        SetHandler example-handler
 	+</Location>
 
-Given the path to run the handler "/jd" so hitting "localhost/jd" will run module page.
+Given the path to run the handler "/reqTest" so hitting "localhost/jd" will run module page.
 
 2. Restart Server : systemctl restart httpd
+
+3. Make sure your Request Goes and Sample is verified by CURL resp Code as "0" on the page
